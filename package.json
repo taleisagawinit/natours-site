@@ -1,0 +1,22 @@
+{
+  "name": "natours",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/taleisagawinit/natours-site.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/taleisagawinit/natours-site/issues"
+  },
+  "homepage": "https://github.com/taleisagawinit/natours-site#readme",
+  "devDependencies": {
+    "node-sass": "^4.14.1"
+  }
+}
