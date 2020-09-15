@@ -1,0 +1,147 @@
+.card {
+  perspective: 150rem;
+  -moz-perspective: 150rem;
+  height: $card-height;
+  position: relative;
+
+  &__side {
+    transition: all 0.8s ease;
+    height: $card-height;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backface-visibility: hidden;
+    width: 100%;
+    border-radius: 3px;
+    box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+
+    &--front {
+      background-color: $color-white;
+    }
+
+    &--back {
+      background-color: plum;
+      transform: rotateY(180deg);
+
+      &-1 {
+        background-image: linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+      }
+
+      &-2 {
+        background-image: linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+      }
+
+      &-3 {
+        background-image: linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+      }
+    }
+  }
+
+  &:hover &__side--front {
+    transform: rotateY(-180deg);
+  }
+
+  &:hover &__side--back {
+    transform: rotateY(0deg);
+  }
+
+  // FRONT OF THE CARD STYLING 
+  &__picture {
+    background-size: cover;
+    height: 23rem;
+    background-blend-mode: screen;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+
+    &--1 {
+      background-image: url(../img/nat-5.jpg), linear-gradient(to right bottom, $color-secondary-light, $color-secondary-dark);
+    }
+
+    &--2 {
+      background-image: url(../img/nat-6.jpg), linear-gradient(to right bottom, $color-primary-light, $color-primary-dark);
+    }
+
+    &--3 {
+      background-image: url(../img/nat-7.jpg), linear-gradient(to right bottom, $color-tertiary-light, $color-tertiary-dark);
+    }
+
+  }
+
+  &__heading {
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    color: $color-white;
+    position: absolute;
+    top: 12rem;
+    right: 2rem;
+    text-align: right;
+    width: 65%;
+  }
+
+  &__heading-span {
+    padding: 1rem 1.5rem;
+    &--1 {
+      background-image: linear-gradient(to right bottom, 
+      rgba($color-secondary-light, .85), 
+      rgba($color-secondary-dark, .85));
+    }
+    &--2 {
+      background-image: linear-gradient(to right bottom, 
+      rgba($color-primary-light, .85), 
+      rgba($color-primary-dark, .85));
+    }
+    &--3 {
+      background-image: linear-gradient(to right bottom, 
+      rgba($color-tertiary-light, .85), 
+      rgba($color-tertiary-dark, .85));
+    }
+  }
+
+  &__details {
+
+    ul {
+      list-style: none;
+      width: 80%;
+      margin: auto;
+      
+      li {
+        text-align: center;
+        font-size: 1.5rem;
+        padding: 1.5rem;
+
+        &:not(:last-child) {
+          border-bottom: 1px solid $color-light-grey-2;
+        }
+      }
+    }
+  }
+
+  // BACK OF CARD STYLING
+  &__call-to-action {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+  }
+
+  &__price-box {
+    text-align: center;
+    margin-bottom: 8rem;
+    color: $color-white;
+  }
+
+  &__price-prefix {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+  }
+
+  &__price-amount {
+    font-size: 6rem;
+    font-weight: 100;
+  }
+}
