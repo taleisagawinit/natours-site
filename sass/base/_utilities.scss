@@ -27,3 +27,11 @@
 .u-margin-top-huge {
   margin-top: 10rem !important;
 }
+
+.u-width-medium {
+  @include responsive(tablet-p) {
+    width: 75%;
+    margin: 0 auto;
+  }
+}
+
