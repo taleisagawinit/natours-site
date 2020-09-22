@@ -10,6 +10,12 @@
   z-index: -500;
   transition: all .3s;
 
+  @supports ((-webkit-backdrop-filter: blur(10px)) or (backdrop-filter: blur(10px))) {
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    background-color: rgba($color-black, .3);
+  }
+
 
   &__content {
     @include absoluteCenter;
@@ -77,6 +83,7 @@
 
     @include responsive(phone) {
       column-count: 1;
+    
     }
   }
 
