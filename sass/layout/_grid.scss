@@ -5,6 +5,15 @@
   // give all rows except the last row, a margin bottom
   &:not(:last-child) {
     margin-bottom: $gutter-vertical;
+
+    @include responsive(tablet-p) {
+      margin-bottom: $gutter-vertical-small;
+    }
+  }
+
+  @include responsive(tablet-p) {
+    max-width: 50rem;
+    padding: 0 3rem;
   }
 
   // clear the columns being floated
@@ -15,6 +24,15 @@
 
     &:not(:last-child) {
       margin-right: $gutter-horizontal;
+
+      @include responsive(tablet-p) {
+        margin-right: 0;
+        margin-bottom: $gutter-vertical-small;
+      }
+    }
+
+    @include responsive(tablet-p) {
+      width: 100% !important;
     }
   }
 
